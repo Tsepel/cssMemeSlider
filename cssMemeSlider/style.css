@@ -1,5 +1,4 @@
 body {
-    /* background: linear-gradient(#342e4a 0%, #1b172c 100%); */
     background: #261E38;
     margin: 0;
     display: flex;
@@ -45,11 +44,9 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-basis: 12.5%;
-    /* transition: opacity 0.8s ease-in-out; */
 }
 
 .meme-image {
-    /* border-radius: 2%; */
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -92,7 +89,6 @@ h2 {
     border-radius: 50%;
     height: 2vw;
     width: 2vw;
-    /* margin: 0.5vw; */
     border: 0.5vw solid #8978D0;
     transition: 0.4s;
 }
@@ -116,27 +112,27 @@ label:active .label-decoration {
     background-color: #f7ecff;
 }
 
-#school:checked ~ .slides-wrapper {
+#potter:checked ~ .slides-wrapper {
     transform: translate(0);
 }
 
-#doctor:checked ~ .slides-wrapper {
+#work:checked ~ .slides-wrapper {
     transform: translate(-12.5%);
 }
 
-#rectangle:checked ~ .slides-wrapper {
+#school:checked ~ .slides-wrapper {
     transform: translate(-25%);
 }
 
-#Einstein:checked ~ .slides-wrapper {
+#rectangle:checked ~ .slides-wrapper {
     transform: translate(-37.5%);
 }
 
-#toilet:checked ~ .slides-wrapper {
+#Einstein:checked ~ .slides-wrapper {
     transform: translate(-50%);
 }
 
-#work:checked ~ .slides-wrapper {
+#toilet:checked ~ .slides-wrapper {
     transform: translate(-62.5%);
 }
 
@@ -150,27 +146,27 @@ label:active .label-decoration {
 
 /*--- Анимация текста: ---*/
 
-#school:checked ~ .bottom .text-bottom .description-wrapper {
+#potter:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(0);
 }
 
-#doctor:checked ~ .bottom .text-bottom .description-wrapper {
+#work:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(-12.5%);
 }
 
-#rectangle:checked ~ .bottom .text-bottom .description-wrapper {
+#school:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(-25%);
 }
 
-#Einstein:checked ~ .bottom .text-bottom .description-wrapper {
+#rectangle:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(-37.5%);
 }
 
-#toilet:checked ~ .bottom .text-bottom .description-wrapper {
+#Einstein:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(-50%);
 }
 
-#work:checked ~ .bottom .text-bottom .description-wrapper {
+#toilet:checked ~ .bottom .text-bottom .description-wrapper {
     transform: translate(-62.5%);
 }
 
@@ -183,7 +179,7 @@ label:active .label-decoration {
 }
 
 #school:checked ~ .bottom .control label[for='school'] .label-decoration,
-#doctor:checked ~ .bottom .control label[for='doctor'] .label-decoration,
+#potter:checked ~ .bottom .control label[for='potter'] .label-decoration,
 #rectangle:checked ~ .bottom .control label[for='rectangle'] .label-decoration,
 #Einstein:checked ~ .bottom .control label[for='Einstein'] .label-decoration,
 #toilet:checked ~ .bottom .control label[for='toilet'] .label-decoration,
