@@ -1,6 +1,6 @@
 body {
-    /* background: linear-gradient(135deg, #342e4a 0%, #1b172c 100%); */
-    background: #9191be;
+    /* background: linear-gradient(#342e4a 0%, #1b172c 100%); */
+    background: #261E38;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -8,14 +8,17 @@ body {
 }
 
 main {
-    margin: 10vw;
+    margin: 10vh 10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 h2 {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 4vh;
+    color: #F7EDFF;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .slider {
@@ -24,22 +27,24 @@ h2 {
     overflow: hidden;
 }
 
-.memes-wrapper {
+.slides-wrapper {
     display: flex;
     justify-content: center;
     height: 60vh;
     width: 640vw;
+    transition: transform 0.8s ease-in-out;
 }
 
-.meme {
+.slide {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-basis: 12.5%;
+    /* transition: opacity 0.8s ease-in-out; */
 }
 
 .meme-image {
-    border-radius: 2%;
+    /* border-radius: 2%; */
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -59,14 +64,11 @@ h2 {
 .description-wrapper {
     display: flex;
     width: 320vw;
+    transition: transform 0.8s ease-in-out;
 }
 
 .description {
     flex-basis: 12.5%;
-}
-
-.buttons {
-    display: flex;
 }
 
 .radio-button {
@@ -75,27 +77,103 @@ h2 {
 
 .control {
     display: flex;
+    justify-content: end;
 }
 
 label {
     cursor: pointer;
-    display: inline-block;
+    background-color: #8978D0;
     border-radius: 50%;
-    height: 2vh;
-    width: 2vh;
-    margin: 0.5vh;
-    border: 0.7vh solid green;
+    height: 2vw;
+    width: 2vw;
+    margin: 0.5vw;
+    border: 0.5vw solid #8978D0;
+    transition: 0.4s;
 }
 
-label::after {
-    border: 0.7vh solid green;
-    border-radius: 50%;
-    height: 4vh;
-    width: 4vh;
+label:hover {
+    border: 0.5vw solid #E5C2FF;
+    background-color: #E5C2FF;
 }
 
-#school:checked ~ .control label:nth-of-type(1),
-#doctor:checked ~ .control label:nth-of-type(2),
-#rectangle:checked ~ .control label:nth-of-type(3) {
-	background: green;
+label:active {
+    border: 0.5vw solid #f7ecff;
+    background-color: #f7ecff;
+}
+
+#school:checked ~ .slides-wrapper {
+    transform: translate(0);
+}
+
+#doctor:checked ~ .slides-wrapper {
+    transform: translate(-12.5%);
+}
+
+#rectangle:checked ~ .slides-wrapper {
+    transform: translate(-25%);
+}
+
+#Einstein:checked ~ .slides-wrapper {
+    transform: translate(-37.5%);
+}
+
+#toilet:checked ~ .slides-wrapper {
+    transform: translate(-50%);
+}
+
+#work:checked ~ .slides-wrapper {
+    transform: translate(-62.5%);
+}
+
+#js:checked ~ .slides-wrapper {
+    transform: translate(-75%);
+}
+
+#css:checked ~ .slides-wrapper {
+    transform: translate(-87.5%);
+}
+
+/*--- Анимация текста: ---*/
+
+#school:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(0);
+}
+
+#doctor:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-12.5%);
+}
+
+#rectangle:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-25%);
+}
+
+#Einstein:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-37.5%);
+}
+
+#toilet:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-50%);
+}
+
+#work:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-62.5%);
+}
+
+#js:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-75%);
+}
+
+#css:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-87.5%);
+}
+
+#school:checked ~ .bottom .control label[for='school'],
+#doctor:checked ~ .bottom .control label[for='doctor'],
+#rectangle:checked ~ .bottom .control label[for='rectangle'],
+#Einstein:checked ~ .bottom .control label[for='Einstein'],
+#toilet:checked ~ .bottom .control label[for='toilet'],
+#work:checked ~ .bottom .control label[for='work'],
+#js:checked ~ .bottom .control label[for='js'],
+#css:checked ~ .bottom .control label[for='css'] {
+    background-color: #261E38;
 }
