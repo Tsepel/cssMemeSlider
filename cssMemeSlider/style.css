@@ -18,12 +18,17 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 4vh;
     color: #F7EDFF;
+    display: table-cell;
+    vertical-align: middle;
     transition: opacity 0.8s ease-in-out;
 }
 
 .slider {
     max-width: 80vw;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
     overflow: hidden;
 }
 
@@ -68,7 +73,9 @@ h2 {
 }
 
 .description {
+    display: table;
     flex-basis: 12.5%;
+    height: inherit;
 }
 
 .radio-button {
@@ -80,23 +87,31 @@ h2 {
     justify-content: end;
 }
 
-label {
-    cursor: pointer;
+.label-decoration {
     background-color: #8978D0;
     border-radius: 50%;
     height: 2vw;
     width: 2vw;
-    margin: 0.5vw;
+    /* margin: 0.5vw; */
     border: 0.5vw solid #8978D0;
     transition: 0.4s;
 }
 
-label:hover {
+label {
+    cursor: pointer;
+    height: 3.5vw;
+    width: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label:hover .label-decoration {
     border: 0.5vw solid #E5C2FF;
     background-color: #E5C2FF;
 }
 
-label:active {
+label:active .label-decoration {
     border: 0.5vw solid #f7ecff;
     background-color: #f7ecff;
 }
@@ -167,13 +182,13 @@ label:active {
     transform: translate(-87.5%);
 }
 
-#school:checked ~ .bottom .control label[for='school'],
-#doctor:checked ~ .bottom .control label[for='doctor'],
-#rectangle:checked ~ .bottom .control label[for='rectangle'],
-#Einstein:checked ~ .bottom .control label[for='Einstein'],
-#toilet:checked ~ .bottom .control label[for='toilet'],
-#work:checked ~ .bottom .control label[for='work'],
-#js:checked ~ .bottom .control label[for='js'],
-#css:checked ~ .bottom .control label[for='css'] {
+#school:checked ~ .bottom .control label[for='school'] .label-decoration,
+#doctor:checked ~ .bottom .control label[for='doctor'] .label-decoration,
+#rectangle:checked ~ .bottom .control label[for='rectangle'] .label-decoration,
+#Einstein:checked ~ .bottom .control label[for='Einstein'] .label-decoration,
+#toilet:checked ~ .bottom .control label[for='toilet'] .label-decoration,
+#work:checked ~ .bottom .control label[for='work'] .label-decoration,
+#js:checked ~ .bottom .control label[for='js'] .label-decoration,
+#css:checked ~ .bottom .control label[for='css'] .label-decoration {
     background-color: #261E38;
 }
