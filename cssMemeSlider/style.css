@@ -189,7 +189,7 @@ label:active .label-decoration {
     background-color: #261E38;
 }
 
-@media (max-width: 70vh) {
+@media (max-device-width: 926px) {
 
     .bottom {
         flex-direction: column-reverse;
