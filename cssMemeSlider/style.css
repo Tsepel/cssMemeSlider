@@ -1,0 +1,207 @@
+body {
+    background: #261E38;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    margin: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vh;
+    color: #F7EDFF;
+    display: table-cell;
+    vertical-align: middle;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slider {
+    max-width: 80vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    overflow: hidden;
+}
+
+.slides-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 640vw;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 12.5%;
+}
+
+.meme-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-bottom {
+    width: 40vw;
+    overflow: hidden;
+}
+
+.description-wrapper {
+    display: flex;
+    width: 320vw;
+    transition: transform 0.8s ease-in-out;
+}
+
+.description {
+    display: table;
+    flex-basis: 12.5%;
+    height: inherit;
+}
+
+.radio-button {
+    display: none;
+}
+
+.control {
+    display: flex;
+    justify-content: end;
+}
+
+.label-decoration {
+    background-color: #8978D0;
+    border-radius: 50%;
+    height: 2vw;
+    width: 2vw;
+    border: 0.5vw solid #8978D0;
+    transition: 0.4s;
+}
+
+label {
+    cursor: pointer;
+    height: 3.8vw;
+    width: 3.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label:hover .label-decoration {
+    border: 0.5vw solid #E5C2FF;
+    background-color: #E5C2FF;
+}
+
+label:active .label-decoration {
+    border: 0.5vw solid #f7ecff;
+    background-color: #f7ecff;
+}
+
+#potter:checked ~ .slides-wrapper {
+    transform: translate(0);
+}
+
+#work:checked ~ .slides-wrapper {
+    transform: translate(-12.5%);
+}
+
+#school:checked ~ .slides-wrapper {
+    transform: translate(-25%);
+}
+
+#rectangle:checked ~ .slides-wrapper {
+    transform: translate(-37.5%);
+}
+
+#Einstein:checked ~ .slides-wrapper {
+    transform: translate(-50%);
+}
+
+#toilet:checked ~ .slides-wrapper {
+    transform: translate(-62.5%);
+}
+
+#js:checked ~ .slides-wrapper {
+    transform: translate(-75%);
+}
+
+#css:checked ~ .slides-wrapper {
+    transform: translate(-87.5%);
+}
+
+/*--- Анимация текста: ---*/
+
+#potter:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(0);
+}
+
+#work:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-12.5%);
+}
+
+#school:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-25%);
+}
+
+#rectangle:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-37.5%);
+}
+
+#Einstein:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-50%);
+}
+
+#toilet:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-62.5%);
+}
+
+#js:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-75%);
+}
+
+#css:checked ~ .bottom .text-bottom .description-wrapper {
+    transform: translate(-87.5%);
+}
+
+#school:checked ~ .bottom .control label[for='school'] .label-decoration,
+#potter:checked ~ .bottom .control label[for='potter'] .label-decoration,
+#rectangle:checked ~ .bottom .control label[for='rectangle'] .label-decoration,
+#Einstein:checked ~ .bottom .control label[for='Einstein'] .label-decoration,
+#toilet:checked ~ .bottom .control label[for='toilet'] .label-decoration,
+#work:checked ~ .bottom .control label[for='work'] .label-decoration,
+#js:checked ~ .bottom .control label[for='js'] .label-decoration,
+#css:checked ~ .bottom .control label[for='css'] .label-decoration {
+    background-color: #261E38;
+}
+
+@media (max-device-width: 926px) {
+
+    .bottom {
+        flex-direction: column-reverse;
+        gap: 5vh;
+    }
+
+    .text-bottom {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .description-wrapper {
+        width: 800%;
+    }
+}
